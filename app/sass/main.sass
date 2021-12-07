@@ -1,0 +1,781 @@
+// Содержимое файла main.sass
+
+
+*
+  margin: 0
+  padding: 0
+  list-style: none
+  text-decoration: none 
+  box-sizing: border-box 
+  transition: all .8s 
+
+
+html
+  overflow: auto
+
+body
+  scroll-behavior: smooth 
+  font-family: 'Roboto', sans-serif
+
+img
+  width: 100%
+  height: auto
+  object-fit: cover
+
+.header
+  padding: 70px 0 40px
+
+.section
+  width: 100%
+  height: auto
+  padding: 50px 0
+
+.container
+  width: 1440px
+  max-width: 100%
+  height: auto
+  margin: 0 auto
+
+.logo_line
+  display: flex
+  justify-content: center 
+  margin-bottom: 40px
+  &_inner
+    width: 120px
+    height: auto
+    object-fit: contain
+
+.nav
+  padding: 0 40px 40px
+  display: flex
+  justify-content: center
+  .nav_list
+    display: flex
+    align-items: center
+    justify-content: space-around
+    width: 40%
+    &_item
+      padding: 0 10px
+      text-transform: uppercase
+      font-weight: 400
+      font-size: 12px
+      line-height: 13px
+      letter-spacing: 3px
+      color: #444
+      
+      text-align: center
+      a 
+        color: inherit
+        
+        
+        &::after
+          display: block
+          width: 0
+          height: 2px
+          content: ''
+          background: transparent
+          margin-top: 2px
+          transition: all 1.3s
+        &:hover
+          &::after
+            width: 100%
+            background: #444
+
+
+
+
+.about_human
+  display: flex
+  flex-direction: column
+  align-items: center
+
+  &_title
+    text-transform: uppercase
+    font-size: 17px
+    line-height: 24px
+    letter-spacing: 6px
+    margin-top: 0
+    margin-bottom: 15px
+    text-align: center
+    width: 90%
+    margin-top: 30px
+
+  &_description
+    text-align: center
+    width: 90%
+    margin-bottom: 30px
+
+
+
+.about_human_photo
+  width: 90%
+  height: auto
+  // img
+  //   max-height: 500px
+
+
+.about_human_social
+  width: 90%
+  height: auto
+  .social_list
+    display: flex
+    align-items: center
+    justify-content: center
+    
+    .social_list_item
+      padding: 10px 35px
+      a
+        color: #303133
+        width: 80px
+        height: 80px
+        display: flex
+        align-items: center
+        justify-content: center
+        overflow: hidden
+        border-radius: 50%  
+        transition: all .5s
+        &:hover, &:focus
+          color: silver
+          background: #444
+          svg 
+            fill: #5ae41a
+
+
+.footer
+  footer
+    padding: 40px
+    display: flex
+    align-items: center
+    justify-content: center
+    p,a
+      color: #303133
+      padding: 0 20px
+      font-size: 12px
+      line-height: 13px
+      letter-spacing: 3px
+      text-transform: uppercase
+    a
+      &:hover, &:focus
+        color: darken(#5ae41a, 30%)
+        &::after
+          width: 100%
+          background: darken(#5ae41a, 30%)
+      &::after
+        display: block
+        width: 0
+        height: 2px
+        content: ''
+        background: transparent
+        margin-top: 2px
+        transition: all 1.3s
+
+.cat_galery
+  width: 100%
+  // max-width: 1200px
+  height: auto
+  min-height: 600px
+  display: flex
+  flex-direction: column
+  align-items: center
+
+
+.cat_galery_filter
+  display: flex
+  align-items: center
+  justify-content: space-around
+  padding: 20px 0
+  width: 50%
+  input
+    color: inherit
+    border: none
+    padding: 10px
+    border-radius: 15px
+    background: transparent
+
+    &:hover
+      background: lighten(#999, 15%)
+
+
+
+.cat_galery_content
+  display: flex
+  flex-direction: column
+  flex-wrap: wrap
+  width: 55%
+  min-width: 800px
+  max-height: 1010px
+  height: auto
+  padding: 20px 0
+  // margin: 0 20%
+  // align-items: start
+            
+.cat_galery_item
+  width: 31% 
+  height: min-content
+  margin: 1%
+  position: relative
+  display: none
+  &.visible
+    display: block
+
+
+  a 
+    display: flex
+    align-items: center
+    justify-content: center
+  &:hover
+    .hover_description
+      z-index: 5
+      height: 100%
+      opacity: .9
+  .hover_description
+    // transition: all .9s
+    overflow: hidden
+    z-index: -5
+    position: absolute
+    bottom: 0
+    left: 0
+    width: 100%  
+    height: 0
+    padding: 5%
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: center
+    color: #222
+    background: lighten(grey, 40%)
+    opacity: 0
+    h3, p 
+      opacity: 1   
+    h3
+      font-size: 16px
+      line-height: 20px
+      letter-spacing: 3px
+      font-weight: 500
+      text-transform: uppercase 
+
+      font-size: 14px
+      line-height: 24px
+      font-weight: 400
+
+
+.content_wrap
+  display: flex
+  flex-direction: column
+  align-items: center
+  margin-bottom: 20px
+  &_text, &_form
+    width: 55%
+  &_form 
+    form 
+      display: flex
+      flex-wrap: wrap
+      justify-content: space-between
+      label
+        text-transform: uppercase
+        font-size: 11px
+        line-height: 13px
+        letter-spacing: 3px
+        font-weight: 400
+      input,textarea
+        border: 1px solid #303133
+        padding: 10px 
+        line-height: 16px
+        width: 100%
+        box-shadow: 0 0 0 0 rgba(0, 0, 0, 0)
+        &:hover
+          box-shadow: 0 8px 20px 0 rgba(0, 0, 0, .3)
+      span, input[name="submit"]
+        margin-top: 25px
+      input[name="submit"]
+        background: transparent
+        text-transform: uppercase
+        line-height: 24px
+        color: #303030
+        &:hover
+          background: #303030
+          color: #fff
+      .one_third_w
+        width: 32%
+      .full_w
+        width: 100%
+.contacts
+  .post_item
+    margin-bottom: 30px
+  .blog_wrap
+    display: flex
+    justify-content: space-around
+  .post_line
+    width: 71%
+    padding: 20px
+  .post_item_banner
+    width: 100%
+    height: auto
+    margin-bottom: 25px
+  .post_item_content
+    display: flex
+    align-items: center
+    flex-direction: column
+  .post_item_title
+    font-weight: 500
+    font-size: 20px
+    line-height: 24px
+    letter-spacing: 4px
+    text-transform: uppercase
+    margin-bottom: 8px
+  .post_item_desc
+    display: flex
+    align-items: center
+    p 
+      margin-right: 25px
+      text-transform: uppercase
+      letter-spacing: 3px
+      font-size: 12px
+      color: inherits
+    .teglink
+      color: #a99464
+      margin-right: 10px
+      text-transform: uppercase
+      &:hover, &:focus
+        color: darken(#a99464, 10%)
+        &::after
+          width: 100%
+          background: darken(#a99464, 10%)
+      &::after
+        display: block
+        width: 0
+        height: 2px
+        content: ''
+        background: transparent
+        margin-top: 2px
+        transition: all 1.3s
+  .post_item_prev 
+    text-align: center
+    p 
+      font-family: inherit
+      font-weight: inherit
+      font-style: inherit
+      font-size: 100%
+      margin-bottom: 20px
+    a.go_to_post
+      font-size: 11px
+      line-height: 24px
+      text-transform: uppercase
+      letter-spacing: 3px
+      display: inline-block
+      padding: 5px 11px 4px 12px
+      background-color: #303133
+      border: 1px solid #303133
+      color: #fff
+      width: auto
+      &:hover
+        background-color: transparent
+        color: #303133
+
+
+.aside
+  padding: 20px
+  // text-align: center
+  width: 27%
+
+  .in-blog
+    font-weight: 400
+    font-size: 12px
+    line-height: 13px
+    margin-bottom: 20px
+  .recent_posts
+    margin-bottom: 20px
+  .blog_human_photo
+    width: 100%
+    height: auto
+  .blog_human_description p 
+    margin-top: 15px
+    -webkit-line-clamp: 3
+    display: -webkit-box
+    -webkit-box-orient: vertical
+    overflow: hidden
+  .recent_posts_title, .post_tags_title
+    font-weight: 400
+    font-size: 12px
+    line-height: 13px
+    margin-bottom: 20px
+  .recent_posts_item
+    text-transform: uppercase
+    letter-spacing: 3px
+    font-size: 12px
+    line-height: 13px
+    a
+      color: inherit
+      &:hover
+        color: lighten(#333, 25%)
+    &::before
+      content: '-'
+  .post_tags_list
+    display: flex
+    flex-wrap: wrap
+  .post_tags_item
+    text-transform: uppercase
+    letter-spacing: 3px
+    font-size: 12px
+    line-height: 13px
+    padding: 5px 10px
+    a
+      
+      color: #333
+
+
+@media screen and ( max-width: 1440px)
+  .container
+    width: 1024px
+
+
+
+@media screen and ( max-width: 1024px)
+
+  .cat_galery_content
+    flex-direction: row
+    width: 85%
+    min-width: auto
+    max-height: fit-content
+    .cat_galery_item
+      height: 220px
+      .img_holder, img
+        height: 100%
+  
+  
+@media screen and ( max-width: 768px)
+
+  .contacts
+    .content_wrap_form
+      .one_third_w
+        width: 100%
+    .content_wrap_form, .content_wrap_text
+      width: 90%
+
+  .blog_wrap
+    flex-direction: column-reverse
+    .post_line, .aside
+      width: 100%
+    .recent_posts, .post_tags
+      text-align: center
+    .post_tags_list
+      justify-content: center
+    .post_item_desc
+      flex-wrap: wrap
+      justify-content: center
+
+
+
+  .about_human_social 
+    .social_list 
+      .social_list_item 
+        padding: 20px
+        a
+          width: 40px
+          height: 40px
+
+
+  .cat_galery_filter
+    flex-wrap: wrap
+    width: auto
+    padding: 10px 20px
+    input
+      padding: 5px
+
+  .header
+    display: flex
+    align-items: center
+    justify-content: space-between
+    // position: static
+    padding: 20px 30px
+    // height: 28px
+    .logo_line
+      margin-bottom: 0
+
+        
+
+
+  .nav
+    padding: 10px
+    // position: static
+    
+    .nav_list
+      flex-direction: column
+      align-items: start
+      position: fixed
+      right: -100%
+      top: 70px
+      bottom: 0
+      width: 94%
+      max-width: 100vw
+      height: 100%
+      // transform: translateY( calc(100% - 100vh) )
+      max-height: 250px
+      background: #333
+      z-index: 99
+    .nav_list_item
+      padding: 10px 5px 10px 20px
+      color: #fff
+      a
+        &:hover
+          &::after
+            
+            background: #fff
+    span
+      z-index: 999
+      display: block
+      right: 20px
+      height: 2px
+      width: 26px
+      background: #000
+      position: fixed
+      top: 31px
+      right: 50px
+      &::before, &::after
+        position: absolute
+        left: 0
+        content: ''
+        width: 100%
+        height: 100%
+        background: #000
+      &::before
+        // transform: translateX(-50%)
+        top: 8px
+      &::after
+        bottom: 8px
+        // transform: translateX(-50%)
+    &.active
+      .nav_list
+        right: 3%
+        left: 3%
+      span 
+        transform: rotate(45deg)
+        &::before
+          top: 0
+          transform: rotate(0deg)
+        &::after
+          bottom: 0
+          transform: rotate(90deg) 
+      
+
+  .cat_galery_content
+    .cat_galery_item
+      height: 160px
+
+@media screen and ( max-width: 576px)
+
+  .section
+    padding: 30px 0
+
+  .footer footer
+    padding: 20px 10px
+    flex-direction: column
+    p 
+      margin-bottom: 12px
+
+  .cat_galery_content
+    justify-content: space-between
+    .cat_galery_item
+      width: 48%
+      margin: 1% 0
+      height: auto
+
+@media screen and ( max-width: 425px)
+
+  .cat_galery_content 
+    .cat_galery_item
+      width: 98%
+      margin: 1%
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  // .nav
+  //   position: relative
+  //   width: 100%
+  // .nav_list
+  //   width: auto
+  //   position: absolute
+  //   top: 0
+  //   right: 0
+  //   flex-direction: column
+  //   .nav_list_item 
+  //     padding: 10px 20px
+  //     background: grey
+  //     width: 100%
+
+
+
+  // #menu__toggle 
+  //   opacity: 0
+
+
+  // #menu__toggle:checked ~ .menu__btn > span 
+  //   transform: rotate(45deg)
+
+  // #menu__toggle:checked ~ .menu__btn > span::before 
+  //   top: 0
+  //   transform: rotate(0)
+
+  // #menu__toggle:checked ~ .menu__btn > span::after 
+  //   top: 0
+  //   transform: rotate(90deg)
+
+  // #menu__toggle:checked ~ .nav_list
+  //   visibility: visible
+  //   left: 0
+
+
+  // .menu__btn 
+  //   display: flex
+  //   align-items: center
+  //   position: fixed
+  //   top: 20px
+  //   left: 20px
+
+  //   width: 26px
+  //   height: 26px
+
+  //   cursor: pointer
+  //   z-index: 1
+
+
+  // .menu__btn > span,
+  // .menu__btn > span::before,
+  // .menu__btn > span::after 
+  //   display: block
+  //   position: absolute
+
+  //   width: 100%
+  //   height: 2px
+
+  //   background-color: #616161
+
+  //   transition-duration: .25s
+
+  // .menu__btn > span::before 
+  //   content: ''
+  //   top: -8px
+
+  // .menu__btn > span::after 
+  //   content: ''
+  //   top: 8px
+
+
+  // .nav_list
+  //   display: flex
+  //   flex-direction: column
+  //   align-items: center
+  //   position: fixed
+  //   visibility: hidden
+  //   top: 0
+  //   left: -100%
+
+  //   width: 300px
+  //   height: 400px
+
+  //   margin: 0
+  //   padding: 80px 0
+
+  //   list-style: none
+
+  //   background-color: #ECEFF1
+  //   box-shadow: 1px 0px 6px rgba(0, 0, 0, .2)
+
+  //   transition-duration: .25s
+
+
+
+
+
+
+
+          
+
+
+// .thankyoucontent
+//   background: rgb(31,38,130)
+
+// .thank-you
+//   display: flex
+//   align-items: center
+//   justify-content: center
+//   flex-direction: column
+//   width: 100vw
+//   height: auto
+//   padding: 30px
+//   text-align: center
+
+//   h1
+//     // font-family: 'Raleway', Arial Black, Sans-Serif
+//     font-weight: 900
+//     letter-spacing: 3px
+//     color: #fafafa
+//     margin: 0
+//     margin-top: 40px
+//     margin-bottom: 40px
+//     font-size: 4.5em
+//   p 
+//     margin: 0
+//     font-size: 1.3em
+//     color: #fafafa
+//     font-family: 'Raleway', sans-serif
+//     letter-spacing: 1px
+//     line-height: 1.5
+
+//   .go-home 
+//     margin-bottom: 20px
+//     background: #e83890
+//     border: none
+//     padding: 25px 30px
+//     margin: 30px 0
+//     border-radius: 5px
+//     cursor: pointer
